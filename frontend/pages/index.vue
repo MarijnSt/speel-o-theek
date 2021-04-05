@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="content-container">
     <p class="mb-4">Elaba {{ this.$auth.user.name }}</p>
 
     <b-button type="is-primary" @click="logout">Logout</b-button>

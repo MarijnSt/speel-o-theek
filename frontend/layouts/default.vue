@@ -1,11 +1,16 @@
 <template>
   <div class="app-container">
+    <Menu/>
     <Nuxt/>
   </div>
 </template>
 
 <script>
+import Menu from "~/components/Menu.vue"
 export default {
+  components: {
+    Menu
+  },
   head () {
     return this.$nuxtI18nHead({ addSeoAttributes: true })
   }
@@ -14,10 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .app-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
 }
