@@ -1,4 +1,5 @@
 export default {
+  // Login page
   login_title: 'Login',
   login_email: 'Email',
   login_password: 'Password',
@@ -6,4 +7,7 @@ export default {
   login_error: 'Credentials are invalid',
   login_error_mail: 'This account does not exist',
   login_error_pw: 'Wrong password',
+
+  // Menu
+  menu_toy_catalog: 'Toy catalog'
 }
