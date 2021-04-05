@@ -11,7 +11,9 @@ export default {
   methods: {
     openMenu() {
       const hamburger = document.querySelector('.hamburger')
+      const menu = document.querySelector('.menu-container')
       hamburger.classList.toggle('open')
+      menu.classList.toggle('open')
     }
   }
 }
@@ -20,17 +22,19 @@ export default {
 <style lang='scss' scoped>
 .hamburger {
   position: relative;
+  top: 3px;
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
 
   span {
     position: absolute;
     background: white;
     height: 3px;
     width: 100%;
-    transition: opacity .1s ease .3s,
-                transform .3s ease,
-                top .3s ease .3s,
+    transition: opacity .1s ease .2s,
+                transform .2s ease,
+                top .2s ease .2s,
   }
 
   span:first-child {
@@ -48,8 +52,8 @@ export default {
   &.open {
     span {
       transition: opacity .1s ease,
-                  transform .3s ease .3s,
-                  top .3s ease;
+                  transform .2s ease .2s,
+                  top .2s ease;
     }
 
     span:first-child {

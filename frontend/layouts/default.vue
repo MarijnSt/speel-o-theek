@@ -13,7 +13,11 @@ export default {
   },
   head () {
     return this.$nuxtI18nHead({ addSeoAttributes: true })
-  }
+  },
+  mounted() {
+    console.log('ieps')
+    // close menu on page change
+  },
 }
 </script>
 

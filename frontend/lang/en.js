@@ -9,5 +9,10 @@ export default {
   login_error_pw: 'Wrong password',
 
   // Menu
-  menu_toy_catalog: 'Toy catalog'
+  menu_toy_catalog: 'Toy catalog',
+  menu_check_in: 'Check in',
+  menu_check_out: 'Check out',
+  menu_toy_admin: 'Toy admin',
+  menu_user_admin: 'User admin',
+  menu_reports: 'Reports',
 }
