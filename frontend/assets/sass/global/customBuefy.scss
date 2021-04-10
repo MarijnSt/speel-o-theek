@@ -1,9 +1,6 @@
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
-// Import colors
-@import "./global/variables.scss";
-
 // Set your colors
 $primary: $green;
 $primary-light: findLightColor($primary);

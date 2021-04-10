@@ -19,7 +19,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/sass/init.scss',
-    '~/assets/sass/customBuefy.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,6 +38,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     'nuxt-i18n',
+  ],
+  
+  buildModules: [
     '@nuxtjs/style-resources',
   ],
 
