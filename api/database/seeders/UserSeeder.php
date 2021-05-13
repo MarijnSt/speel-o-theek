@@ -29,6 +29,7 @@ class UserSeeder extends Seeder
         $user->postalCode = 9300;
         $user->city = 'Oelsjt';
         $user->uitPas = false;
+        // $user->paymentReceived = date('Y-m-d H:i:s');
         $user->save();
     }
 }

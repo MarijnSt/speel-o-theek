@@ -11,9 +11,9 @@ export default {
   components: {
     Menu
   },
-  head () {
-    return this.$nuxtI18nHead({ addSeoAttributes: true })
-  },
+  // head () {
+  //   return this.$nuxtI18nHead({ addSeoAttributes: true })
+  // },
   mounted() {
     console.log('ieps')
     // close menu on page change
@@ -25,5 +25,11 @@ export default {
 .app-container {
   width: 100vw;
   height: 100vh;
+}
+</style>
+
+<style lang="scss">
+.content-container {
+  padding: 1rem;
 }
 </style>

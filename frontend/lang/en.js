@@ -15,4 +15,21 @@ export default {
   menu_toy_admin: 'Toy admin',
   menu_user_admin: 'User admin',
   menu_reports: 'Reports',
+
+  // User
+  add_user: 'Add user',
+  label_id: 'ID',
+  label_user_role: 'User role',
+  label_first_name: 'First name',
+  label_last_name: 'Last name',
+  label_mobile_phone: 'Mobile phone',
+  label_fixed_phone: 'Fixed phone',
+  label_email: 'Email',
+  label_street: 'Street',
+  label_number: 'Number',
+  label_postal_code: 'Postal code',
+  label_city: 'City',
+  label_uitPas: 'UiTPAS',
+  label_paymentReceived: 'Payment received',
+  label_createdDate: 'Created at'
 }

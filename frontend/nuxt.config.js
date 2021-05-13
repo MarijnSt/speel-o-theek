@@ -1,4 +1,13 @@
 export default {
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+    apiURL: process.env.API_URL
+  },
+  
+  privateRuntimeConfig: {
+    //private env variables: api tokens, ...
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Toy App',
