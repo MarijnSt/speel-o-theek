@@ -49,7 +49,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::with('userRole', 'children')->where('id', 1)->get();
+        return $user;
     }
 
     /**

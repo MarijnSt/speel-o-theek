@@ -20,17 +20,17 @@
         :sort-icon-size="sortIconSize"
         :hoverable="isHoverable"
         default-sort="id"
-        aria-next-label="Next page"
-        aria-previous-label="Previous page"
-        aria-page-label="Page"
-        aria-current-label="Current page"
+        :aria-next-label="$t('aria_next_label')"
+        :aria-previous-label="$t('aria_previous_label')"
+        :aria-page-label="$t('aria_page_label')"
+        :aria-current-label="$t('aria_current_label')"
       >
         <b-table-column
           field="edit"
           width="40"
           v-slot="props"
         >
-          <nuxt-link :to="localePath('users')">
+          <nuxt-link class="edit-icon" :to="localePath({ name: 'users-id', params: {id: props.row.id} })">
             <span class="icon">
               <svg style="width:20px;height:20px" viewBox="0 0 24 24">
                 <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
@@ -44,7 +44,7 @@
           width="40"
           v-slot="props"
         >
-          <nuxt-link :to="localePath('users')">
+          <nuxt-link class="delete-icon" :to="localePath('users')">
             <span class="icon">
               <svg style="width:20px;height:20px" viewBox="0 0 24 24">
                 <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
@@ -208,15 +208,14 @@ export default {
       sortIconSize: "is-small",
       currentPage: 1,
       perPage: 20,
-      isHoverable: true
+      isHoverable: true,
     };
   },
   async asyncData({ $axios, $config, app }) {
-    const lang = app.i18n.locale
-    console.log('lang', lang)
+    // const lang = app.i18n.locale
+    // console.log('lang', lang)
     try {
       const res = await $axios.$get(`${$config.apiURL}/api/users`)
-      console.log('res', res)
       const users = res
       return { users }
     } catch (err) {
@@ -226,5 +225,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.table-container {
+  .edit-icon, .delete-icon {
+    color: black;
+  }
+}
 </style>

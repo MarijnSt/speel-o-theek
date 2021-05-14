@@ -16,7 +16,7 @@ class ChildSeeder extends Seeder
     public function run()
     {
         $child = new Child();
-        $child->family_id = 1;
+        $child->user_id = 1;
         $child->lastName = 'Stammeleer';
         $child->firstName = 'Tuur';
         $child->dateOfBirth = Carbon::parse('2020-05-20');

@@ -9,7 +9,7 @@ class Child extends Model
 {
     use HasFactory;
 
-    public function family ()
+    public function user ()
     {
         return $this->belongsTo(User::class);
     }

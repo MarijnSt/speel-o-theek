@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $users = User::with('userRole')->get();
-    return $users;
+    $user = User::with('userRole', 'children')->where('id', 1)->get();
+    return $user;
 });

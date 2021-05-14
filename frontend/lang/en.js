@@ -31,5 +31,9 @@ export default {
   label_city: 'City',
   label_uitPas: 'UiTPAS',
   label_payment_received: 'Payment received',
-  label_created_at: 'Created at'
+  label_created_at: 'Created at',
+  aria_next_label: 'Next page',
+  aria_previous_label: 'Previous page',
+  aria_page_label: 'Page',
+  aria_current_label: 'Current page',
 }
