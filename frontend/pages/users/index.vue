@@ -18,6 +18,7 @@
         :pagination-rounded="isPaginationRounded"
         :sort-icon="sortIcon"
         :sort-icon-size="sortIconSize"
+        :hoverable="isHoverable"
         default-sort="id"
         aria-next-label="Next page"
         aria-previous-label="Previous page"
@@ -25,11 +26,40 @@
         aria-current-label="Current page"
       >
         <b-table-column
+          field="edit"
+          width="40"
+          v-slot="props"
+        >
+          <nuxt-link :to="localePath('users')">
+            <span class="icon">
+              <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+              </svg>
+            </span>
+          </nuxt-link>
+        </b-table-column>
+        
+        <b-table-column
+          field="delete"
+          width="40"
+          v-slot="props"
+        >
+          <nuxt-link :to="localePath('users')">
+            <span class="icon">
+              <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+                <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+              </svg>
+            </span>
+          </nuxt-link>
+        </b-table-column>
+
+        <b-table-column
           field="id"
           :label="$t('label_id')"
           width="40"
           sortable
           numeric
+          centered
           v-slot="props"
         >
           {{ props.row.id }}
@@ -46,7 +76,7 @@
 
         <b-table-column
           field="user.firstName"
-          label="First Name"
+          :label="$t('label_first_name')"
           sortable
           v-slot="props"
         >
@@ -55,7 +85,7 @@
 
         <b-table-column
           field="user.lastName"
-          label="Last Name"
+          :label="$t('label_last_name')"
           sortable
           v-slot="props"
         >
@@ -64,7 +94,7 @@
 
         <b-table-column
           field="user.mobilePhone"
-          label="Mobile Phone"
+          :label="$t('label_mobile_phone')"
           sortable
           v-slot="props"
         >
@@ -73,7 +103,7 @@
 
         <b-table-column
           field="user.fixedPhone"
-          label="Fixed Phone"
+          :label="$t('label_fixed_phone')"
           sortable
           v-slot="props"
         >
@@ -82,7 +112,7 @@
 
         <b-table-column
           field="user.email"
-          label="Email"
+          :label="$t('label_email')"
           sortable
           v-slot="props"
         >
@@ -91,7 +121,7 @@
 
         <b-table-column
           field="user.street"
-          label="Street"
+          :label="$t('label_street')"
           sortable
           v-slot="props"
         >
@@ -100,7 +130,7 @@
 
         <b-table-column
           field="user.houseNumber"
-          label="Number"
+          :label="$t('label_number')"
           sortable
           v-slot="props"
         >
@@ -109,7 +139,7 @@
 
         <b-table-column
           field="user.postalCode"
-          label="Postal Code"
+          :label="$t('label_postal_code')"
           sortable
           v-slot="props"
         >
@@ -118,7 +148,7 @@
 
         <b-table-column
           field="user.city"
-          label="City"
+          :label="$t('label_city')"
           sortable
           v-slot="props"
         >
@@ -127,7 +157,7 @@
 
         <b-table-column
           field="user.uitPas"
-          label="UiTPAS"
+          :label="$t('label_uitPas')"
           sortable
           v-slot="props"
         >
@@ -136,7 +166,7 @@
 
         <b-table-column
           field="user.paymentReceived"
-          label="Payment Received"
+          :label="$t('label_payment_received')"
           sortable
           centered
           v-slot="props"
@@ -151,7 +181,7 @@
 
         <b-table-column
           field="user.createdDate"
-          label="Created"
+          :label="$t('label_created_at')"
           sortable
           centered
           v-slot="props"
@@ -178,6 +208,7 @@ export default {
       sortIconSize: "is-small",
       currentPage: 1,
       perPage: 20,
+      isHoverable: true
     };
   },
   async asyncData({ $axios, $config, app }) {

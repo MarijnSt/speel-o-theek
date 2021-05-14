@@ -30,6 +30,6 @@ export default {
   label_postal_code: 'Postal code',
   label_city: 'City',
   label_uitPas: 'UiTPAS',
-  label_paymentReceived: 'Payment received',
-  label_createdDate: 'Created at'
+  label_payment_received: 'Payment received',
+  label_created_at: 'Created at'
 }
